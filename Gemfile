@@ -66,3 +66,6 @@ gem 'jquery-rails'
 
 # Nested attributes 20/3/2021
 gem 'cocoon'
+
+# user authentication
+gem 'devise'
