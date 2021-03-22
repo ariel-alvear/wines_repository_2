@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-movies = Strain.create([{ name: 'Merlot'}, {name: 'Carmenere'}, {name: 'Cabernet Souvignon'}, {name: 'Chardonnay'}])
+Strain.destroy_all
+strains = Strain.create([{ name: 'Merlot'}, {name: 'Carmenere'}, {name: 'Cabernet Souvignon'}, {name: 'Chardonnay'}, {name: 'Malbec'}, {name: 'Pinot Noir'}, {name: 'Souvignon Blanc'}, {name: 'Garnacha'}])
 
 
