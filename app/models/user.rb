@@ -14,8 +14,4 @@ class User < ApplicationRecord
   def self.is_friend(x)
     self.find(x).roles.first.name == 'friend'
   end
-
-  def self.is_wine_expert(x)
-    self.find(x).roles.first.name == 'wine_expert'
-  end
 end

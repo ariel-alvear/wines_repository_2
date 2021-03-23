@@ -16,6 +16,11 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :grade %>
+    <%= form.number_field :grade %>
+  </div>
+
   <div id="wine_strains" class="form-group">
     <%= form.fields_for :wine_strains do |strain_wine_form| %>
     <%= render 'wine_strain_fields', f: strain_wine_form %>
