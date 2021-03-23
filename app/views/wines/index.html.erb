@@ -20,9 +20,11 @@
             <li><%= wine_strain.strain.name %><%= " (#{wine_strain.percentage}%)" %></li>
           <% end %>
         </td>
-        <td><%= link_to 'Show', wine %></td>
-        <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
-        <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if User.is_admin(current_user.id)%>
+          <td><%= link_to 'Show', wine %></td>
+          <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
+          <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,10 @@
 
 <br>
 
-<%= link_to 'New Wine', new_wine_path %>
+<% if User.is_admin(current_user.id)%>
+  <%= link_to 'New Wine', new_wine_path %>
+<% end %>
+
+<br>
+
+<%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-primary mx-4'  %>

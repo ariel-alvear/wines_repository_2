@@ -7,15 +7,15 @@ class User < ApplicationRecord
   has_many :assignments
   has_many :roles, through: :assignments
 
-  def is_admin?
-    self.roles.first.name == 'admin'
+  def self.is_admin(x)
+    self.find(x).roles.first.name == 'admin'
   end
 
-  def is_friend
-    self.roles.first.name == 'friend'
+  def self.is_friend(x)
+    self.find(x).roles.first.name == 'friend'
   end
 
-  def is_wine_expert
-    self.roles.first.name == 'wine_expert'
+  def self.is_wine_expert(x)
+    self.find(x).roles.first.name == 'wine_expert'
   end
 end
