@@ -2,6 +2,8 @@
 
 one:
   name: MyString
+  enologist: one
 
 two:
   name: MyString
+  enologist: two

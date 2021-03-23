@@ -16,7 +16,7 @@ class EnologistsTest < ApplicationSystemTestCase
 
     fill_in "Age", with: @enologist.age
     fill_in "Nacionality", with: @enologist.nacionality
-    fill_in "Name,", with: @enologist.name,
+    fill_in "Name", with: @enologist.name
     click_on "Create Enologist"
 
     assert_text "Enologist was successfully created"
@@ -29,7 +29,7 @@ class EnologistsTest < ApplicationSystemTestCase
 
     fill_in "Age", with: @enologist.age
     fill_in "Nacionality", with: @enologist.nacionality
-    fill_in "Name,", with: @enologist.name,
+    fill_in "Name", with: @enologist.name
     click_on "Update Enologist"
 
     assert_text "Enologist was successfully updated"

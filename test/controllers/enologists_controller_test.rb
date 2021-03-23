@@ -17,7 +17,7 @@ class EnologistsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create enologist" do
     assert_difference('Enologist.count') do
-      post enologists_url, params: { enologist: { age: @enologist.age, nacionality: @enologist.nacionality, name,: @enologist.name, } }
+      post enologists_url, params: { enologist: { age: @enologist.age, nacionality: @enologist.nacionality, name: @enologist.name } }
     end
 
     assert_redirected_to enologist_url(Enologist.last)
@@ -34,7 +34,7 @@ class EnologistsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update enologist" do
-    patch enologist_url(@enologist), params: { enologist: { age: @enologist.age, nacionality: @enologist.nacionality, name,: @enologist.name, } }
+    patch enologist_url(@enologist), params: { enologist: { age: @enologist.age, nacionality: @enologist.nacionality, name: @enologist.name } }
     assert_redirected_to enologist_url(@enologist)
   end
 
