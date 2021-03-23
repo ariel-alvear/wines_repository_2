@@ -9,4 +9,10 @@
 Strain.destroy_all
 strains = Strain.create([{ name: 'Merlot'}, {name: 'Carmenere'}, {name: 'Cabernet Souvignon'}, {name: 'Chardonnay'}, {name: 'Malbec'}, {name: 'Pinot Noir'}, {name: 'Souvignon Blanc'}, {name: 'Garnacha'}])
 
+Wine.destroy_all
+wines = Wine.create([{ name: 'Santa Helena'}, {name: 'Casillero del Diablo'}, {name: 'Tres Medallas'}])
+
+WineStrain.destroy_all
+wine_strains = WineStrain.create([{ wine_id: 1, strain_id: 1, percentage: 80}, { wine_id: 1, strain_id: 2, percentage: 20}])
+
 
