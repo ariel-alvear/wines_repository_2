@@ -69,3 +69,6 @@ gem 'cocoon'
 
 # user authentication
 gem 'devise'
+
+# Role Based Authorization
+gem 'cancancan'
