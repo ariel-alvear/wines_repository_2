@@ -48,6 +48,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # BDD gem 23/3/2021
+  gem 'rspec'
+  gem 'rspec-rails', '>= 3.9.0'
 end
 
 group :test do
@@ -70,5 +74,3 @@ gem 'cocoon'
 # user authentication
 gem 'devise'
 
-# Role Based Authorization
-gem 'cancancan'
