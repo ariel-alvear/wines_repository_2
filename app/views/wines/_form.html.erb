@@ -21,6 +21,16 @@
     <%= form.number_field :grade %>
   </div>
 
+  <div class="field">
+    <%= form.label :enologists %>
+      <%= form.collection_check_boxes(:enologist_ids, Enologist.all, :id, :name) do |b| %>
+        <%= b.label class:"label-checkbox" do%>
+          <%= b.check_box + b.text %>
+        <% end %>
+      <% end %>
+    </div>
+
+
   <div id="wine_strains" class="form-group">
     <%= form.fields_for :wine_strains do |strain_wine_form| %>
     <%= render 'wine_strain_fields', f: strain_wine_form %>

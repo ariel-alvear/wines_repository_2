@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_235533) do
+ActiveRecord::Schema.define(version: 2021_03_24_000620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,15 @@ ActiveRecord::Schema.define(version: 2021_03_23_235533) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wine_enologists", force: :cascade do |t|
+    t.bigint "wine_id"
+    t.bigint "enologist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["enologist_id"], name: "index_wine_enologists_on_enologist_id"
+    t.index ["wine_id"], name: "index_wine_enologists_on_wine_id"
+  end
+
   create_table "wine_strains", force: :cascade do |t|
     t.bigint "wine_id"
     t.bigint "strain_id"
@@ -95,6 +104,8 @@ ActiveRecord::Schema.define(version: 2021_03_23_235533) do
   add_foreign_key "enologist_magazines", "enologists"
   add_foreign_key "enologist_magazines", "magazines"
   add_foreign_key "magazines", "enologists"
+  add_foreign_key "wine_enologists", "enologists"
+  add_foreign_key "wine_enologists", "wines"
   add_foreign_key "wine_strains", "strains"
   add_foreign_key "wine_strains", "wines"
 end
