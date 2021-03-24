@@ -1,3 +1,4 @@
 class Magazine < ApplicationRecord
-  has_and_belongs_to_many :enologists
+  has_many :enologist_magazines
+  has_many :enologist, through: :enologist_magazines
 end

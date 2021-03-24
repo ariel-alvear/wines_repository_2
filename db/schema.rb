@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_214415) do
+ActiveRecord::Schema.define(version: 2021_03_23_235533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2021_03_23_214415) do
     t.datetime "updated_at", null: false
     t.index ["role_id"], name: "index_assignments_on_role_id"
     t.index ["user_id"], name: "index_assignments_on_user_id"
+  end
+
+  create_table "enologist_magazines", force: :cascade do |t|
+    t.bigint "enologist_id"
+    t.bigint "magazine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["enologist_id"], name: "index_enologist_magazines_on_enologist_id"
+    t.index ["magazine_id"], name: "index_enologist_magazines_on_magazine_id"
   end
 
   create_table "enologists", force: :cascade do |t|
@@ -83,6 +92,8 @@ ActiveRecord::Schema.define(version: 2021_03_23_214415) do
 
   add_foreign_key "assignments", "roles"
   add_foreign_key "assignments", "users"
+  add_foreign_key "enologist_magazines", "enologists"
+  add_foreign_key "enologist_magazines", "magazines"
   add_foreign_key "magazines", "enologists"
   add_foreign_key "wine_strains", "strains"
   add_foreign_key "wine_strains", "wines"
