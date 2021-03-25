@@ -74,3 +74,6 @@ gem 'cocoon'
 # user authentication
 gem 'devise'
 
+# gem required for testing views in rspec 
+gem 'rails-controller-testing'
+
